@@ -32,6 +32,8 @@
       <End Role="TblDepartment" EntitySet="TblDepartment" />
       <End Role="TblEmployee" EntitySet="TblEmployee" />
     </AssociationSet>
+    <EntitySet Name="TblAdmin" EntityType="CasgemPortfolioModel.TblAdmin" />
+    <EntitySet Name="TblReference" EntityType="CasgemPortfolioModel.TblReference" />
   </EntityContainer>
   <EntityType Name="TblMessage">
     <Key>
@@ -102,4 +104,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdminName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AdminPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblReference">
+    <Key>
+      <PropertyRef Name="ReferenceID" />
+    </Key>
+    <Property Name="ReferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferenceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceJob" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceMail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

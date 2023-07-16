@@ -23,7 +23,7 @@ namespace Casgem_Portfolio.Controllers
         {
             db.TblMessage.Add(p);
             db.SaveChanges();
-            return RedirectToAction("Index","Portfolio");
+            return RedirectToAction("Index","Contact");
         }
     }
 }

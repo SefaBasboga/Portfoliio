@@ -50,5 +50,14 @@ namespace Casgem_Portfolio.Controllers
 
             return PartialView();
         }
+        public FileResult DownloadCV()
+        {
+            string filePath = Server.MapPath("~/Templates/SefaBasboga-CV.pdf"); // CV dosyasının yolu
+            string fileName = "SefaBasboga-CV.pdf"; // İndirilen dosyanın adı
+
+            // İndirme işlemi için dosyayı dönüştürüp döndürün
+            return File(filePath, MimeMapping.GetMimeMapping(filePath), fileName);
+        }
+
     }
 }

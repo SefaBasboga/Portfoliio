@@ -51,7 +51,7 @@ Author URL: http://w3layouts.com
                             </div>
                             <div class="cont-right">
                                 <h6>Mail Gönder</h6>
-                                <p><a href="mailto:example@mail.com" class="mail">sefabsbgaaa@mail.com</a></p>
+                                <p><a href="" class="mail">sefabsbgaaa@mail.com</a></p>
                             </div>
                         </div>
                         <div class="cont-top margin-up">
@@ -60,7 +60,7 @@ Author URL: http://w3layouts.com
                             </div>
                             <div class="cont-right">
                                 <h6>Konum</h6>
-                                <p>Ankara , Pursaklar</p>
+                                <p>Ankara , Keçiören</p>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,20 @@ Author URL: http://w3layouts.com
                             <textarea name="Content" class="form-control" id="w3lMessage" placeholder="Mesajınızı Yazabilirsiniz"
                                       required=""></textarea>
                             <div class="text-right">
-                                <button type="submit" class="btn btn-primary btn-style mt-4">Mesaj Gönder</button>
+                                <button type="submit" class="btn btn-primary btn-style mt-4"  onclick="showSweetAlert()">Mesaj Gönder</button>
+
+                                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                <script>
+                                    function showSweetAlert() {
+                                        Swal.fire({
+                                            title: 'Mesaj Gönderildi!',
+                                            text: 'Mesajınız başarıyla gönderildi.',
+                                            icon: 'success',
+                                            confirmButtonColor: '#3085d6',
+                                            confirmButtonText: 'Tamam'
+                                        });
+                                    }
+                                </script>
                             </div>
                         </form>
                     </div>
@@ -102,10 +115,10 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="col-lg-4 footer-right text-lg-right text-center mt-lg-0 mt-3">
                         <ul class="social m-0 p-0">
-                            <li><a href="#facebook"><span class="fa fa-facebook-official"></span></a></li>
-                            <li><a href="#linkedin"><span class="fa fa-linkedin-square"></span></a></li>
-                            <li><a href="#instagram"><span class="fa fa-instagram"></span></a></li>
-                            <li><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                           
+                            <li><a href="https://www.linkedin.com/in/sefaba%C5%9Fbo%C4%9Fa/"><span class="fa fa-linkedin-square"></span></a></li>
+                            <li><a href="https://www.instagram.com/sefabasbogaa/"><span class="fa fa-instagram"></span></a></li>
+                            <li><a href="https://github.com/SefaBasboga"><span class="fa fa-github"></span></a></li>
                         </ul>
                     </div>
                 </div>

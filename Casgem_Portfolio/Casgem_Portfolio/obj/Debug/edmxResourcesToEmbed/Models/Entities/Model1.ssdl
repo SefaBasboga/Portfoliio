@@ -10,6 +10,14 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdminPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="TblDepartment">
     <Key>
       <PropertyRef Name="DepartmentID" />
@@ -28,11 +36,6 @@
     <Property Name="EmployeeSalary" Type="decimal" Precision="18" Scale="2" />
     <Property Name="EmployeeDepartment" Type="int" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TblEmployeeCount">
-          <Property Name="StaffCount" Type="int" />
-        </EntityType>-->
   <EntityType Name="TblFeature">
     <Key>
       <PropertyRef Name="FatureID" />
@@ -51,6 +54,15 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
     <Property Name="SenderMail" Type="nvarchar" MaxLength="100" />
     <Property Name="MessageSubject" Type="nvarchar" MaxLength="100" />
     <Property Name="Content" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TblReference">
+    <Key>
+      <PropertyRef Name="ReferenceID" />
+    </Key>
+    <Property Name="ReferenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferenceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReferenceJob" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReferenceMail" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="TblResume">
     <Key>
@@ -93,10 +105,12 @@ warning 6013: The table/view 'CasgemPortfolio.dbo.TblEmployeeCount' does not hav
   </Association>
   <EntityContainer Name="CasgemPortfolioModelStoreContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblDepartment" EntityType="Self.TblDepartment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblFeature" EntityType="Self.TblFeature" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblReference" EntityType="Self.TblReference" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblResume" EntityType="Self.TblResume" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblService" EntityType="Self.TblService" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblTry" EntityType="Self.TblTry" Schema="dbo" store:Type="Tables" />
